@@ -9,8 +9,6 @@ class SideBar(tk.Frame):
         self.word_list = tk.Listbox(self)
 
     def setup_layout(self):
-        print(f"Setup layout of {self.__class__.__name__}.")
-
         self.columnconfigure(0, weight=1)
         self.rowconfigure(1, weight=1)
 

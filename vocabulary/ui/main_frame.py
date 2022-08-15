@@ -14,8 +14,6 @@ class MainFrame(tk.Frame):
         self.main_widget = tk.Text(self)
 
     def setup_layout(self):
-        print(f"Setup layout of {self.__class__.__name__}.")
-
         self.columnconfigure(1, weight=1)
         self.columnconfigure(0, weight=0, minsize=200)
         self.rowconfigure(0, weight=1)
