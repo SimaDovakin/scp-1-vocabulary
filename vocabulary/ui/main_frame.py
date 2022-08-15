@@ -10,6 +10,7 @@ class MainFrame(tk.Frame):
         self.state = state
         self.sidebar = SideBar(
             self,
+            word_list=self.state['words'],
             bg='#ffffff'
         )
         self.main_widget = tk.Text(self)
@@ -25,6 +26,7 @@ class MainFrame(tk.Frame):
 
     def setup_state(self):
         if self.state['words']:
-            word_list = self.sidebar.word_list
-            for word_data in self.state['words']:
-                word_list.insert(tk.END, word_data['word'])
+            self.sidebar.setup_state()
+
+    def setup_actions(self):
+        self.sidebar.setup_actions()

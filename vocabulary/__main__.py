@@ -29,8 +29,11 @@ if __name__ == '__main__':
     }
 
     main_frame = MainFrame(root, state=mock_state, bg='#505050')
+
     main_frame.setup_layout()
     main_frame.setup_state()
+    main_frame.setup_actions()
+
     main_frame.grid(row=0, column=0, sticky='WNES')
 
     root.mainloop()
