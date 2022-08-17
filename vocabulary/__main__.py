@@ -14,16 +14,20 @@ if __name__ == '__main__':
     mock_state = {
         'words': [
             {
-                'word': 'development'
+                'word': 'development',
+                'translation': 'розробка'
             },
             {
-                'word': 'commercial'
+                'word': 'commercial',
+                'translation': 'комерційний'
             },
             {
-                'word': 'news'
+                'word': 'news',
+                'translation': 'новини'
             },
             {
-                'word': 'happiness'
+                'word': 'happiness',
+                'translation': 'щастя'
             }
         ]
     }

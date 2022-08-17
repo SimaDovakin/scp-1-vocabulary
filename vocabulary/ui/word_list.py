@@ -7,7 +7,6 @@ from vocabulary.actions.listbox_actions import onselect
 class WordList(tk.Listbox):
 
     def __init__(self, *args, word_list: Optional[list] = None, **kwargs):
-        print('Word List', args, kwargs)
         super().__init__(*args, **kwargs)
         self.word_list = [] if word_list is None else word_list
 
@@ -16,4 +15,5 @@ class WordList(tk.Listbox):
             self.insert(tk.END, word_data['word'])
 
     def setup_actions(self):
-        self.bind('<<ListboxSelect>>', lambda e: onselect(e, self.word_list))
+        text_box = self.master.master.main_widget
+        self.bind('<<ListboxSelect>>', lambda e: onselect(e, text_box))
