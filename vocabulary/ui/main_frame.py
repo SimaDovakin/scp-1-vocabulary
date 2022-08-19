@@ -1,6 +1,7 @@
 import tkinter as tk
 
 from .sidebar import SideBar
+from .text_box import TextBox
 
 
 class MainFrame(tk.Frame):
@@ -13,7 +14,7 @@ class MainFrame(tk.Frame):
             word_list=self.state['words'],
             bg='#ffffff'
         )
-        self.text_box = tk.Text(self)
+        self.text_box = TextBox(self)
 
     def setup_layout(self):
         self.columnconfigure(1, weight=1)
@@ -27,6 +28,8 @@ class MainFrame(tk.Frame):
     def setup_state(self):
         if self.state['words']:
             self.sidebar.setup_state()
+
+        self.text_box.setup_state()
 
     def setup_actions(self):
         self.sidebar.setup_actions()
