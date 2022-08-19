@@ -33,3 +33,4 @@ class MainFrame(tk.Frame):
 
     def setup_actions(self):
         self.sidebar.setup_actions()
+        self.text_box.setup_actions()

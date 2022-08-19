@@ -1,6 +1,8 @@
 import tkinter as tk
 from typing import Optional
 
+from vocabulary.actions.textbox_actions import oninput
+
 
 class TextBox(tk.Text):
 
@@ -18,4 +20,4 @@ class TextBox(tk.Text):
         self.insert(tk.END, translation)
 
     def setup_actions(self):
-        pass
+        self.bind('<KeyRelease>', oninput)
