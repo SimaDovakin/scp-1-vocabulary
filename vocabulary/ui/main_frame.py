@@ -13,7 +13,7 @@ class MainFrame(tk.Frame):
             word_list=self.state['words'],
             bg='#ffffff'
         )
-        self.main_widget = tk.Text(self)
+        self.text_box = tk.Text(self)
 
     def setup_layout(self):
         self.columnconfigure(1, weight=1)
@@ -22,7 +22,7 @@ class MainFrame(tk.Frame):
 
         self.sidebar.setup_layout()
         self.sidebar.grid(row=0, column=0, sticky='WNES')
-        self.main_widget.grid(row=0, column=1, sticky='WNES')
+        self.text_box.grid(row=0, column=1, sticky='WNES')
 
     def setup_state(self):
         if self.state['words']:

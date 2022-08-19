@@ -15,5 +15,5 @@ class WordList(tk.Listbox):
             self.insert(tk.END, word_data['word'])
 
     def setup_actions(self):
-        text_box = self.master.master.main_widget
+        text_box = self.master.master.text_box
         self.bind('<<ListboxSelect>>', lambda e: onselect(e, text_box))
