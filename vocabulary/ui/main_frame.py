@@ -1,4 +1,5 @@
 import tkinter as tk
+from typing import Optional
 
 from .sidebar import SideBar
 from .text_box import TextBox
@@ -6,12 +7,10 @@ from .text_box import TextBox
 
 class MainFrame(tk.Frame):
 
-    def __init__(self, *args, state: dict = {}, **kwargs):
+    def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.state = state
         self.sidebar = SideBar(
             self,
-            word_list=self.state['words'],
             bg='#ffffff'
         )
         self.text_box = TextBox(self)
@@ -25,9 +24,10 @@ class MainFrame(tk.Frame):
         self.sidebar.grid(row=0, column=0, sticky='WNES')
         self.text_box.grid(row=0, column=1, sticky='WNES')
 
-    def setup_state(self):
-        if self.state['words']:
-            self.sidebar.setup_state()
+    def setup_state(self, state: Optional[dict] = None) -> None:
+        state = state if state is not None else {}
+        if state and state['words']:
+            self.sidebar.setup_state(state['words'])
 
         self.text_box.setup_state()
 

@@ -6,13 +6,14 @@ from vocabulary.actions.textbox_actions import oninput
 
 class TextBox(tk.Text):
 
-    def __init__(self, *args, word_data: Optional[dict] = None, **kwargs):
+    def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.word_data = word_data if word_data else {}
 
-    def setup_state(self) -> None:
-        if self.word_data:
-            translation = self.word_data.get('translation', 'Translation not found.')
+    def setup_state(self, word_data: Optional[dict] = None) -> None:
+        word_data = word_data if word_data is not None else {}
+
+        if word_data:
+            translation = word_data.get('translation', 'Translation not found.')
         else:
             translation = ''
 
