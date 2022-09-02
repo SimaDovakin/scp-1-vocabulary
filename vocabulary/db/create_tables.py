@@ -13,3 +13,10 @@ def create_word_table(cursor):
     result = cursor.execute(query)
 
     return result
+
+
+def create_tables() -> None:
+    """
+        Creates all tables of the app.
+    """
+    create_word_table()
