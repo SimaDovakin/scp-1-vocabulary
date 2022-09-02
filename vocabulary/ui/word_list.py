@@ -5,6 +5,9 @@ from vocabulary.actions.listbox_actions import onselect
 
 
 class WordList(tk.Listbox):
+    """
+        Contains the word list of vocabulary.
+    """
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

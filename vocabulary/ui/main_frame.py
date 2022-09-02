@@ -6,6 +6,10 @@ from .text_box import TextBox
 
 
 class MainFrame(tk.Frame):
+    """
+        Main Farame of the app. It has methods for set up layout, state,
+    and actions (e.g. events of the child elements).
+    """
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

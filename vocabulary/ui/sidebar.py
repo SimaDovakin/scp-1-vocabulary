@@ -5,6 +5,10 @@ from .word_list import WordList
 
 
 class SideBar(tk.Frame):
+    """
+        Side bar of the app where you can find the word list and some
+    additional widgets for interacting with it.
+    """
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

@@ -5,6 +5,10 @@ from vocabulary.actions.textbox_actions import oninput
 
 
 class TextBox(tk.Text):
+    """
+        Text box where you can add some notes (or translations) of
+    the word.
+    """
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
