@@ -1,6 +1,7 @@
 import tkinter as tk
 from typing import Optional
 
+from .input_field import InputField
 from .word_list import WordList
 
 
@@ -12,7 +13,7 @@ class SideBar(tk.Frame):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.word_input = tk.Entry(self)
+        self.word_input = InputField(self)
         self.word_list_widget = WordList(self)
 
     def setup_layout(self) -> None:
