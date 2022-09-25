@@ -1,7 +1,9 @@
+from functools import lru_cache
 import os
 from pathlib import Path
 
 
+@lru_cache
 def init_config_dir() -> Path:
     """
         Creates a configuration directory of the app if it doesn't
