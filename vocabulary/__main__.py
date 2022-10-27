@@ -1,6 +1,9 @@
 import tkinter as tk
 
-from .ui import MainFrame
+from vocabulary.config.initialize import set_words_to_state
+from vocabulary.db.create_tables import create_tables
+from vocabulary.db.selects import get_words
+from vocabulary.ui import MainFrame
 
 
 if __name__ == '__main__':
@@ -11,26 +14,15 @@ if __name__ == '__main__':
     root.columnconfigure(0, weight=1)
     root.rowconfigure(0, weight=1)
 
+    create_tables()
+
     mock_state = {
-        'words': [
-            {
-                'word': 'development',
-                'translation': 'розробка'
-            },
-            {
-                'word': 'commercial',
-                'translation': 'комерційний'
-            },
-            {
-                'word': 'news',
-                'translation': 'новини'
-            },
-            {
-                'word': 'happiness',
-                'translation': 'щастя'
-            }
-        ]
+        'words': []
     }
+    set_words_to_state(
+        mock_state,
+        get_words()
+    )
 
     main_frame = MainFrame(root, bg='#505050')
 
