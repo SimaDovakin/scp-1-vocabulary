@@ -13,5 +13,7 @@ def db_query(func):
             with closing(connection.cursor()) as cursor:
                 result = func(cursor, *args, **kwargs)
 
+            connection.commit()
+
         return result
     return wrapper
