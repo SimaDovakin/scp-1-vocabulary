@@ -1,5 +1,7 @@
 import tkinter as tk
 
+from vocabulary.actions.input_field_actions import onclick_enter
+
 
 class InputField(tk.Entry):
     """
@@ -9,4 +11,9 @@ class InputField(tk.Entry):
         super().__init__(*args, **kwargs)
 
     def setup_actions(self):
-        pass
+        listbox = self.master.word_list_widget
+
+        self.bind(
+            '<Return>',
+            lambda event: onclick_enter(event, self, listbox)
+        )

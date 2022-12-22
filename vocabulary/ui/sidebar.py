@@ -30,3 +30,4 @@ class SideBar(tk.Frame):
 
     def setup_actions(self):
         self.word_list_widget.setup_actions()
+        self.word_input.setup_actions()
