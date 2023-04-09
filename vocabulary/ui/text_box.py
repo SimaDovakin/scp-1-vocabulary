@@ -25,4 +25,6 @@ class TextBox(tk.Text):
         self.insert(tk.END, translation)
 
     def setup_actions(self):
-        self.bind('<KeyRelease>', oninput)
+        word_list = self.master.sidebar.word_list_widget
+
+        self.bind('<KeyRelease>', lambda e: oninput(e, word_list))

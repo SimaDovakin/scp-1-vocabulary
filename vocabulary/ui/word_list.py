@@ -1,7 +1,7 @@
 import tkinter as tk
 from typing import Optional
 
-from vocabulary.actions.listbox_actions import onselect
+from vocabulary.actions.listbox_actions import onselect, onpressdelete
 
 
 class WordList(tk.Listbox):
@@ -21,4 +21,6 @@ class WordList(tk.Listbox):
 
     def setup_actions(self):
         text_box = self.master.master.text_box
+
         self.bind('<<ListboxSelect>>', lambda e: onselect(e, text_box))
+        self.bind('<Delete>', lambda e: onpressdelete(e))
